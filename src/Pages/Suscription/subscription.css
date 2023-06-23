@@ -1,0 +1,106 @@
+.subscribe {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  height: 86vh;
+  width: 80%;
+  box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 8vh;
+  border: 2px sol #333;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 680px) {
+  .subscribe {
+    min-width: 350px;
+  }
+}
+
+.subscribeImage {
+  position: relative;
+  max-width: 80px;
+  margin: 50px 10px 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.heading {
+  font-size: 35px;
+  font-weight: 700;
+  color: #343c41;
+  padding: 5px;
+}
+
+.subheading {
+  font-size: 18px;
+  color: #343c41;
+}
+
+.input {
+  width: auto;
+  padding: 10px 8px;
+  border: 1.5px solid #cfd5d8;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.4s linear;
+  min-width: 250px;
+  margin-bottom: 15px;
+}
+
+.checkbox {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.input:focus,
+.input:hover,
+.input:valid {
+  outline: none;
+  box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  background-image: linear-gradient(
+    to right,
+    #e6dada 0%,
+    #274046 51%,
+    #e6dada 100%
+  );
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.subscribeImage--success:after {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 26px;
+  height: 26px;
+  background-image: url("/public/img/check.png");
+  background-size: cover;
+  content: "";
+  -webkit-animation: slideUp 0.3s ease-out;
+  animation: slideUp 0.3s ease-out;
+}

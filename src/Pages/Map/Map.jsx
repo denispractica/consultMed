@@ -28,7 +28,7 @@ import VaccinesIcon from "@mui/icons-material/Vaccines";
 import { useNavigate } from "react-router-dom";
 import L from "leaflet";
 
-export function RoutingMap({ waypoints }) {
+const createRoutingMachineLayer = ({ waypoints }) => {
   const instance = L.Routing.control({
     waypoints: waypoints.map((coords) => L.latLng(coords)),
     createMarker: () => null,
@@ -40,9 +40,8 @@ export function RoutingMap({ waypoints }) {
     },
   });
   return instance;
-}
-
-const RoutingComp = createControlComponent(RoutingMap);
+};
+const RoutingMachine = createControlComponent(createRoutingMachineLayer);
 
 const Map = () => {
   const { location, zoom, wp, setWp } = useContext(Context);
@@ -184,7 +183,7 @@ const Map = () => {
 
         <ManualLocation />
 
-        {wp.length > 1 && <RoutingComp waypoints={wp} />}
+        {wp.length > 1 && <RoutingMachine waypoints={wp} />}
       </MapContainer>
     </>
   );

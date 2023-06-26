@@ -12,7 +12,7 @@ import "leaflet/dist/leaflet.css";
 import "./map.css";
 import DraggableMarker from "./DraggableMarker";
 import LocationButton from "./LocationButton";
-import { getKilometros, myIcon,RoutingMap } from "../../Components/Functions";
+import { getKilometros, myIcon } from "../../Components/Functions";
 import axios from "axios";
 import BadgeIcon from "@mui/icons-material/Badge";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
@@ -26,8 +26,21 @@ import RestartButton from "./RestartButton.jsx";
 import ManualLocation from "./ManualLocation";
 import VaccinesIcon from "@mui/icons-material/Vaccines";
 import { useNavigate } from "react-router-dom";
+import L from "leaflet";
 
-
+export function RoutingMap({ waypoints }) {
+  const instance = L.Routing.control({
+    waypoints: waypoints.map((coords) => L.latLng(coords)),
+    createMarker: () => null,
+    lineOptions: {
+      styles: [
+        { color: "black", opacity: 0.8, weight: 8 },
+        { color: "white", opacity: 1, weight: 4, dashArray: "7,12" },
+      ],
+    },
+  });
+  return instance;
+}
 
 const RoutingComp = createControlComponent(RoutingMap);
 

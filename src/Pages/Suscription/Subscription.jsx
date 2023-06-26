@@ -18,8 +18,7 @@ const Subscription = () => {
   const postForm = (e) => {
     e.preventDefault();
     setSubsSucces(() => !subsSucces);
-    
-   
+
     //Enviar el formulario al backend
   };
 
@@ -32,7 +31,7 @@ const Subscription = () => {
             : "subscribeImage"
         }
       >
-        <img src="/consultMed/img/subscribe.png" />
+        <img src="/consultMed/img/subscribe.png" alt="imagen" />
       </div>
       <Form onSubmit={postForm} className="form">
         {!subsSucces && <h2 className="heading">Suscríbete</h2>}

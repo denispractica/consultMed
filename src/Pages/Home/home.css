@@ -21,7 +21,7 @@ img {
 .inputbox {
   margin-top: 25vh;
   height: 80px;
-  width: 80%;
+  width: 50%;
   position: relative;
   top: 50%;
   left: 50%;
@@ -44,7 +44,7 @@ img {
   transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out,
     padding 0.2s;
   transition-delay: 0s, 0.4s, 0s;
-  box-shadow: 0 0 0 2px currentColor;
+  box-shadow: 0 0 0 2px black;
   color: inherit;
   cursor: pointer;
   padding: 31.5px 0;
@@ -73,7 +73,7 @@ img {
 }
 .inputbox input:focus + .del:focus,
 .inputbox input:valid + .del:focus {
-  box-shadow: 0 0 0 1px currentColor;
+  box-shadow: 0 0 0 1px black;
   height: 40px;
   width: 40px;
 }
@@ -112,7 +112,7 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  background: currentColor;
+  background: black;
   width: 2px;
   height: 60px;
   transform: translate(51px, 51px) translate(-50%, -50%) rotate(-45deg)
@@ -125,7 +125,7 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  background: currentColor;
+  background: black;
   width: 2px;
   height: 60px;
   transform: translate(-50%, -50%) rotate(45deg) scaleY(0);
@@ -152,4 +152,15 @@ img {
   .searchBanner {
     margin-top: 10vh;
   }
+}
+
+/* Contenedor del Form y el Error */
+.container {
+  text-align: center;
+}
+
+/* Mensaje de error */
+
+.error {
+  color: red;
 }

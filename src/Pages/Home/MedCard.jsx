@@ -8,16 +8,20 @@ import MapIcon from "@mui/icons-material/Map";
 
 const MedCard = ({
   name = "medicamento",
-  description = "sobre el medicamento",
-  imgUrl = "/consultMed/img/banner.jpg",
+  pharmacy = "sobre el medicamento",
   price = "1",
   availability = false,
 }) => {
   return (
-    <Card sx={{ maxWidth: 345}}>
-      <CardActionArea >
-        <CardMedia component="img" height="140" image={imgUrl} alt={name} />
-        <CardContent sx={{height:150}}>
+    <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="140"
+          image={"/consultMed/img/med.jpg"}
+          alt={name}
+        />
+        <CardContent sx={{ height: 105 }}>
           <Typography gutterBottom variant="h5" component="div">
             {name}
           </Typography>
@@ -36,7 +40,7 @@ const MedCard = ({
               display: "-webkit-box",
             }}
           >
-            {description}
+            {pharmacy}
           </Typography>
         </CardContent>
       </CardActionArea>

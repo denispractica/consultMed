@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import Search from "./Search";
 import "./home.css";
-import MedCard from "./MedCard";
-import Medicamentos from "../../Data/Medicamentos";
+
+//import Medicamentos from "../../Data/Medicamentos";
 import Context from "../../Components/Context/Context";
 
 const Home = () => {
@@ -40,21 +40,7 @@ const Home = () => {
         <img src="/consultMed/img/banner.png" alt="imgBanner" />
       </div>
       <Search />
-      <div className="cards">
-        {Medicamentos.map((e) => {
-          return (
-            <div key={e.id}>
-              <MedCard
-                name={e.name}
-                description={e.description}
-                imgUrl={e.imgUrl}
-                price={e.price}
-                availability={e.availability}
-              />
-            </div>
-          );
-        })}
-      </div>
+      
     </>
   );
 };

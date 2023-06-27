@@ -40,7 +40,6 @@ const Home = () => {
         <img src="/consultMed/img/banner.png" alt="imgBanner" />
       </div>
       <Search />
-      
     </>
   );
 };

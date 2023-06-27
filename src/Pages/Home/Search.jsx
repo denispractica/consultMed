@@ -81,8 +81,7 @@ const Search = () => {
         </form>
         {error && <p className="error">{error}</p>}
       </header>
-
-      <main>
+      <main className="showResult">
         {loading ? <LinearProgress /> : <Medicines medicines={medicines} />}
       </main>
     </>

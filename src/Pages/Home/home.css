@@ -21,7 +21,7 @@ img {
 .inputbox {
   margin-top: 25vh;
   height: 80px;
-  width: 50%;
+  width: 80%;
   position: relative;
   top: 50%;
   left: 50%;
@@ -157,10 +157,22 @@ img {
 /* Contenedor del Form y el Error */
 .container {
   text-align: center;
+  height: 10vh;
+  width: 100%;
 }
 
 /* Mensaje de error */
 
 .error {
   color: red;
+}
+
+/* Mostrar Resultado de la Búsqueda */
+
+.showResult {
+  margin-top: 10vh;
+  height: 40vh;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
 }

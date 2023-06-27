@@ -5,7 +5,7 @@ export const SearchMedicines = async ({ search }) => {
 
   try {
     const response = await axios.get(
-      `http://www.omdbapi.com/?apikey=e046e150&s=${search}`
+      `https://www.omdbapi.com/?apikey=e046e150&s=${search}`
     );
     const data = await response.data;
 

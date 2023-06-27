@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/consultMed/static/css/main.4513956b.css",
-    "main.js": "/consultMed/static/js/main.f15cf6f8.js",
+    "main.js": "/consultMed/static/js/main.d9a68f3b.js",
     "index.html": "/consultMed/index.html",
     "main.4513956b.css.map": "/consultMed/static/css/main.4513956b.css.map",
-    "main.f15cf6f8.js.map": "/consultMed/static/js/main.f15cf6f8.js.map"
+    "main.d9a68f3b.js.map": "/consultMed/static/js/main.d9a68f3b.js.map"
   },
   "entrypoints": [
     "static/css/main.4513956b.css",
-    "static/js/main.f15cf6f8.js"
+    "static/js/main.d9a68f3b.js"
   ]
 }

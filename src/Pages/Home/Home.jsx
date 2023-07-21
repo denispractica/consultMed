@@ -23,7 +23,7 @@ const Home = () => {
                   [position.coords.latitude, position.coords.longitude],
                   e[1],
                 ];
-              else return [position.coords.latitude, position.coords.longitude];
+              else return [[position.coords.latitude, position.coords.longitude]];
             });
           },
           function (error) {

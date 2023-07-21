@@ -7,7 +7,7 @@ import LinearProgress from "@mui/material/LinearProgress";
 function MedicinesTable() {
   const params = useParams();
   const columns = ["Medicamentos", "Disponibilidad", "Precio"];
-  const idfarmacia = params.id;
+  const nombrePharmacy = params.nombre;
   const [data, setData] = useState([]);
   const options = {
     download: false,
@@ -24,21 +24,15 @@ function MedicinesTable() {
   const getMedicines = (medicines) => {
     const aux = [];
     medicines.map((m) => {
-      let disp = "Agotado";
-      if (m.cantidad > 0) {
-        disp = "Disponible";
-      }
-      aux.push([m.nombre, disp, m.precio]);
+      aux.push([m.nombre, m.disponibilidad, m.precio]);
     });
     setData(aux);
   };
 
   useEffect(() => {
     axios
-      .get(
-        `https://my-json-server.typicode.com/mitesis123/dbjson/medicamentos/${idfarmacia}`
-      )
-      .then((resp) => getMedicines(resp.data.Medicamentos))
+      .get(`https://backend.t3sd.nat.cu/getMedicine/${nombrePharmacy}`)
+      .then((resp) => getMedicines(resp.data.Medicines))
       .catch((e) => console.log(e));
   }, []);
 

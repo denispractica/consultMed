@@ -141,10 +141,15 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
 }
+
 @media (max-width: 600px) {
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 10px;
   }
+
+  /* Banner */
+
   .imgBanner {
     height: 30vh;
     width: 100%;

@@ -15,7 +15,12 @@ export const useMedicines = ({ search }) => {
       setError(null);
       previousSearch.current = search;
       const newMedicines = await SearchMedicines({ search });
-      setMedicines(newMedicines);
+
+      if (newMedicines.length > 0) {
+        setMedicines(newMedicines);
+      } else {
+        setMedicines([]);
+      }
     } catch (e) {
       setError(e.message);
       console.log(error);

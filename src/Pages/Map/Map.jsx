@@ -50,8 +50,8 @@ const Map = () => {
 
   useEffect(() => {
     axios
-      .get("https://my-json-server.typicode.com/mitesis123/dbjson/farmacias")
-      .then((resp) => setArrayIcons(paintFarms(resp.data)))
+      .get("https://backend.t3sd.nat.cu/getPharmacy")
+      .then((resp) => setArrayIcons(paintFarms(resp.data.Pharmacy)))
       .catch((e) => console.log(e));
   }, [location]);
 
@@ -104,7 +104,7 @@ const Map = () => {
                     sx={{ fontSize: "12px", color: "black" }}
                     onClick={() => {
                       navigate(
-                        `/consultMed/map/medicinesTable/${e.id}/${e.nombre}`
+                        `/consultMed/map/medicinesTable/${e.nombre}`
                       );
                     }}
                   >

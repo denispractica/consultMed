@@ -3,7 +3,6 @@ import "./home.css";
 import { useMedicines } from "../../Components/Hooks/useMedicines";
 import { Medicines } from "./Medicines";
 import LinearProgress from "@mui/material/LinearProgress";
-import debounce from "just-debounce-it";
 
 const useSearch = () => {
   const [search, setSearch] = useState("");
@@ -40,13 +39,6 @@ const Search = () => {
   const { search, setSearch, error } = useSearch();
   const { medicines, getMedicines, loading } = useMedicines({ search });
 
-  const debounceGetMedicines = useCallback(
-    debounce((search) => {
-      getMedicines({ search });
-    }, 300),
-    [getMedicines]
-  );
-
   const searchTerm = (e) => {
     e.preventDefault();
     getMedicines();
@@ -54,9 +46,9 @@ const Search = () => {
 
   const searchChange = (e) => {
     const newSearch = e.target.value;
+    
     if (newSearch.startsWith(" ")) return;
     setSearch(newSearch);
-    debounceGetMedicines(newSearch);
   };
 
   return (
@@ -70,6 +62,7 @@ const Search = () => {
               placeholder="Buscar Medicamentos..."
               onChange={searchChange}
             />
+            
             <button
               onClick={() => {
                 setSearch("");
@@ -77,6 +70,7 @@ const Search = () => {
               type="reset"
               className="del"
             ></button>
+    
           </div>
         </form>
         {error && <p className="error">{error}</p>}

@@ -7,14 +7,13 @@ const ListOfMedicines = ({ medicines }) => {
     <div className="cards">
       {medicines.map((e) => {
         return (
-          <div key={e.id}>
-            <MedCard
-              name={e.nombre}
-              pharmacy={e.farmacia}
-              price={e.precio}
-              availability={e.cantidad > 0}
-            />
-          </div>
+          <MedCard
+            key={crypto.randomUUID()}
+            name={e.nombre}
+            pharmacy={e.farmacia}
+            price={e.precio}
+            availability={e.disponibilidad}
+          />
         );
       })}
     </div>

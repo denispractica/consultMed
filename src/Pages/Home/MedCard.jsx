@@ -10,10 +10,16 @@ const MedCard = ({
   name = "medicamento",
   pharmacy = "sobre el medicamento",
   price = "1",
-  availability = false,
+  availability = "Si",
 }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card
+      sx={{
+        maxWidth: 250,
+        boxShadow: "0px 0px 6px 4px rgba(0, 0, 0, 0.5)",
+        border: "2px sol #333",
+      }}
+    >
       <CardActionArea>
         <CardMedia
           component="img"
@@ -45,7 +51,7 @@ const MedCard = ({
         </CardContent>
       </CardActionArea>
       <CardActions
-        sx={{ backgroundColor: availability ? "#21c05a" : "#e1183a" }}
+        sx={{ backgroundColor: availability === "Si" ? "#21c05a" : "#e1183a" }}
       >
         <Button>
           <MapIcon sx={{ color: "black", fontSize: "30px" }} />

@@ -16,7 +16,7 @@ const Router = () => {
           <Route path="/consultMed" element={<Home />} />
           <Route path="/consultMed/map" element={<Map />} />
           <Route
-            path="/consultMed/map/medicinesTable/:id/:nombre"
+            path="/consultMed/map/medicinesTable/:nombre"
             element={<MedicinesTable />}
           />
           <Route path="/consultMed/form" element={<Subscription />} />

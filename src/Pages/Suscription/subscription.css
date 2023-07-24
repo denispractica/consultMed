@@ -44,13 +44,12 @@
 }
 
 .input {
-  width: auto;
+  width: 300px;
   padding: 10px 8px;
   border: 1.5px solid #cfd5d8;
   border-radius: 4px;
   text-align: center;
   transition: all 0.4s linear;
-  min-width: 250px;
   margin-bottom: 15px;
 }
 
@@ -103,4 +102,9 @@
   content: "";
   -webkit-animation: slideUp 0.3s ease-out;
   animation: slideUp 0.3s ease-out;
+}
+
+.aviso {
+  color: #f31;
+  margin-bottom: 10px;
 }

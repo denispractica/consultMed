@@ -7,6 +7,7 @@ import axios from "axios";
 const Subscription = () => {
   const [showCardForm, setShowCardForm] = useState(false);
   const [response, setResponse] = useState("");
+
   const {
     register,
     handleSubmit,
@@ -39,7 +40,10 @@ const Subscription = () => {
         resetField("pharmacy");
         resetField("medicine");
         resetField("tarjeton");
-        setSubsSucces(() => !subsSucces);
+        setSubsSucces(true);
+        setTimeout( () => {
+           setSubsSucces(false);
+        }, 5000);
         return;
       } else {
         setSubsSucces(false);
@@ -63,7 +67,7 @@ const Subscription = () => {
       </div>
       <Form onSubmit={handleSubmit(postForm)} className="form">
         {!subsSucces && <h2 className="heading">Suscríbete</h2>}
-        {subsSucces && <h2 className="heading">{response}</h2>}
+        {subsSucces && <h2 className="heading">{response} </h2>}
         <Form.Control
           className="input"
           placeholder="Correo de Notificación"

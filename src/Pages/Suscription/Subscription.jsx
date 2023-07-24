@@ -31,7 +31,6 @@ const Subscription = () => {
         rq
       );
       if (rp.data.Error) {
-        setSubsSucces(false);
         setResponse(rp.data.response);
         return;
       } else if (rp.data.response !== "Ese correo ya está en uso") {
@@ -46,7 +45,6 @@ const Subscription = () => {
         }, 5000);
         return;
       } else {
-        setSubsSucces(false);
         setResponse(rp.data.response);
         return;
       }

@@ -126,7 +126,6 @@ const Subscription = () => {
         {showCardForm && (
           <>
             <h3>Datos del tarjetón</h3>
-            {/*Datos del tarjetón */}
           </>
         )}
 

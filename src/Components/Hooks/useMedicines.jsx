@@ -1,20 +1,27 @@
-import { useRef, useState } from "react";
+import { useState, useContext } from "react";
 import { SearchMedicines } from "../../Pages/Home/SearchMedicines";
+import Context from "../Context/Context";
 
 export const useMedicines = ({ search }) => {
   const [medicines, setMedicines] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const previousSearch = useRef(search);
+  const { municipio, provincia } = useContext(Context);
+  let prov = provincia;
+  let mun = municipio;
 
   const getMedicines = async () => {
-    if (previousSearch.current === search) return;
-
     try {
       setLoading(true);
       setError(null);
-      previousSearch.current = search;
-      const newMedicines = await SearchMedicines({ search });
+
+      if (prov === null || prov === "undefined") prov = "";
+      if (mun === null || mun === "undefined") mun = "";
+      const newMedicines = await SearchMedicines({
+        search,
+        prov,
+        mun,
+      });
 
       if (newMedicines.length > 0) {
         setMedicines(newMedicines);

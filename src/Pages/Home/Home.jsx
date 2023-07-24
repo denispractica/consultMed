@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import Search from "./Search";
 import "./home.css";
-
-//import Medicamentos from "../../Data/Medicamentos";
+import Filters from "./Filters";
 import Context from "../../Components/Context/Context";
 
 const Home = () => {
@@ -23,7 +22,8 @@ const Home = () => {
                   [position.coords.latitude, position.coords.longitude],
                   e[1],
                 ];
-              else return [[position.coords.latitude, position.coords.longitude]];
+              else
+                return [[position.coords.latitude, position.coords.longitude]];
             });
           },
           function (error) {
@@ -39,6 +39,7 @@ const Home = () => {
       <div className="imgBanner">
         <img src="/consultMed/img/banner.png" alt="imgBanner" />
       </div>
+      <Filters />
       <Search />
     </>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./home.css";
 import { useMedicines } from "../../Components/Hooks/useMedicines";
 import { Medicines } from "./Medicines";
@@ -41,12 +41,14 @@ const Search = () => {
 
   const searchTerm = (e) => {
     e.preventDefault();
-    getMedicines();
+    if (error === null) {
+      getMedicines();
+    }
   };
 
   const searchChange = (e) => {
     const newSearch = e.target.value;
-    
+
     if (newSearch.startsWith(" ")) return;
     setSearch(newSearch);
   };
@@ -62,7 +64,7 @@ const Search = () => {
               placeholder="Buscar Medicamentos..."
               onChange={searchChange}
             />
-            
+
             <button
               onClick={() => {
                 setSearch("");
@@ -70,12 +72,12 @@ const Search = () => {
               type="reset"
               className="del"
             ></button>
-    
           </div>
         </form>
-        {error && <p className="error">{error}</p>}
       </header>
+
       <main className="showResult">
+        {error && <p className="error">{error}</p>}
         {loading ? <LinearProgress /> : <Medicines medicines={medicines} />}
       </main>
     </>
